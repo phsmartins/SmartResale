@@ -1,7 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    font-size: 62.5%;
+
+    --background-color: #030234;
+    --text-color: #FFFFFF;
+    --btn-color: #87B3DD;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: "Roboto", sans-serif;
 }
 
 main {
@@ -13,9 +25,54 @@ main {
     align-items: center;
     justify-content: center;
 
-    background: #030234;
+    background: var(--background-color);
+}
+
+img.logo-branca {
+    width: 22rem;
 }
 
 img.error404 {
-    width: 500px;
+    width: 45rem;
+}
+
+main h1 {
+    margin-top: -1rem;
+
+    font-size: 3.8rem;
+    color: var(--text-color);
+}
+
+main a {
+    font-size: 2.4rem;
+    color: var(--background-color);
+    text-decoration: none;
+
+    margin-top: 4rem;
+    padding: 1rem 2rem;
+
+    background-color: var(--btn-color);
+    border-radius: .5rem;
+}
+
+@media only screen and (max-width: 600px) {
+    main {
+        padding: 2%;
+    }
+
+    img.error404 {
+        width: 28rem;
+    }
+
+    img.logo-branca {
+        width: 14rem;
+    }
+
+    main h1 {
+        font-size: 2.1rem;
+    }
+
+    main a {
+        font-size: 1.6rem;
+    }
 }

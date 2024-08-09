@@ -10,6 +10,7 @@
 </head>
 <body>
     <main>
+        <img class="logo-branca" src="/images/logo/logo-branca-SmartResale.png" alt="Logo da SmartResale" />
         <img class="error404" src="/images/error404.png" alt="Imagem de um robô desligado e ao fundo o número 404" />
         <h1>Opss... Página não encontrada</h1>
         <a href="/">Ir para o início</a>
