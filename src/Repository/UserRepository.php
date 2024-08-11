@@ -110,4 +110,21 @@ readonly class UserRepository
 
         return $user;
     }
+
+    public function findUserByEmail(string $email): ?array
+    {
+        $querySql = "SELECT * FROM users WHERE email = :email";
+
+        $statement = $this->pdo->prepare($querySql);
+        $statement->bindValue(":email", $email);
+
+        $resultFindUserByEmail = $statement->execute();
+        $userData = $statement->fetch(\PDO::FETCH_ASSOC);
+
+        if ($resultFindUserByEmail === false || $userData === false) {
+            return null;
+        }
+
+        return $userData;
+    }
 }
