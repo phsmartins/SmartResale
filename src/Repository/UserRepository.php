@@ -1,0 +1,54 @@
+<?php
+
+namespace Smart\Resale\Repository;
+
+use Smart\Resale\Entity\User;
+
+readonly class UserRepository
+{
+    public function __construct(
+        private \PDO $pdo
+    )
+    {}
+
+    private function checkIfEmailExists(string $userEmail): void
+    {
+        $querySql = "SELECT COUNT(*) FROM users WHERE email = :email;";
+
+        $statement = $this->pdo->prepare($querySql);
+        $statement->bindValue(":email", $userEmail);
+        $statement->execute();
+
+        $existsEmail = $statement->fetchColumn();
+
+        if ($existsEmail > 0) {
+            throw new \LogicException("O e-mail que você forneceu já está associado a uma conta");
+        }
+    }
+
+    public function addUser(User $user): bool
+    {
+        $this->checkIfEmailExists($user->getEmail());
+
+        $querySql = "
+            INSERT INTO users (
+                name, email, password
+            ) VALUES (
+                :name, :email, :password
+            );
+        ";
+
+        $statement = $this->pdo->prepare($querySql);
+
+        $statement->bindValue(":name", $user->getName());
+        $statement->bindValue(":email", $user->getEmail());
+        $statement->bindValue(":password", $user->getPasswordHash());
+
+        $resultAddVideo = $statement->execute();
+
+        $id = $this->pdo->lastInsertId();
+        $user->setId($id);
+
+        return $resultAddVideo;
+    }
+}
