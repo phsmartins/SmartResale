@@ -2,8 +2,6 @@
 
 namespace Smart\Resale\Entity;
 
-use InvalidArgumentException;
-
 class User
 {
     private int $id;
