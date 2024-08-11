@@ -43,7 +43,13 @@ class User
 
     public function setEmail(string $email): void
     {
-        $this->email = filter_var($email, FILTER_VALIDATE_EMAIL);
+        $emailValidated = filter_var($email, FILTER_VALIDATE_EMAIL);
+
+        if ($emailValidated === false) {
+            throw new \InvalidArgumentException("E-mail inválido");
+        }
+
+        $this->email = $emailValidated;
     }
 
     public function getPasswordHash(): string
