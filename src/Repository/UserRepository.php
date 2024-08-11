@@ -74,9 +74,7 @@ readonly class UserRepository
 
     public function removerUser(int $id): bool
     {
-        $querySql = "
-            DELETE FROM users WHERE id = :id;
-        ";
+        $querySql = "DELETE FROM users WHERE id = :id;";
 
         $statement = $this->pdo->prepare($querySql);
         $statement->bindValue(":id", $id, \PDO::PARAM_INT);
@@ -86,9 +84,7 @@ readonly class UserRepository
 
     public function findUserData(int $id): ?User
     {
-        $querySql = "
-            SELECT * FROM users WHERE id = :id
-        ";
+        $querySql = "SELECT * FROM users WHERE id = :id;";
 
         $statement = $this->pdo->prepare($querySql);
         $statement->bindValue(":id", $id);
