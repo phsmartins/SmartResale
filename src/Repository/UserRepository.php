@@ -71,4 +71,16 @@ readonly class UserRepository
 
         return $statement->execute();
     }
+
+    public function removerUser(int $id): bool
+    {
+        $querySql = "
+            DELETE FROM users WHERE id = :id;
+        ";
+
+        $statement = $this->pdo->prepare($querySql);
+        $statement->bindValue(":id", $id, \PDO::PARAM_INT);
+
+        return $statement->execute();
+    }
 }
