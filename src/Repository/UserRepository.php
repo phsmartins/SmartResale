@@ -83,4 +83,35 @@ readonly class UserRepository
 
         return $statement->execute();
     }
+
+    public function findUserData(int $id): ?User
+    {
+        $querySql = "
+            SELECT * FROM users WHERE id = :id
+        ";
+
+        $statement = $this->pdo->prepare($querySql);
+        $statement->bindValue(":id", $id);
+
+        $resultFindUserData = $statement->execute();
+        $userData = $statement->fetch(\PDO::FETCH_ASSOC);
+
+        if ($resultFindUserData === false || $userData === false) {
+            return null;
+        }
+
+        return $this->hydrateUser($userData);
+    }
+
+    private function hydrateUser(array $userData): User
+    {
+        $user = new User(
+            $userData["name"],
+            $userData["email"],
+            $userData["password"],
+        );
+        $user->setId($userData['id']);
+
+        return $user;
+    }
 }
