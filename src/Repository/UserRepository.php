@@ -51,4 +51,24 @@ readonly class UserRepository
 
         return $resultAddVideo;
     }
+
+    public function updateUser(User $user): bool
+    {
+        $querySql = "
+            UPDATE users SET
+                name = :name,
+                email = :email,
+                password = :password
+            WHERE id = :id;
+        ";
+
+        $statement = $this->pdo->prepare($querySql);
+
+        $statement->bindValue(":name", $user->getName());
+        $statement->bindValue(":email", $user->getEmail());
+        $statement->bindValue(":password", $user->getPasswordHash());
+        $statement->bindValue(":id", $user->getId(), \PDO::PARAM_INT);
+
+        return $statement->execute();
+    }
 }
