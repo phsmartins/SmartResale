@@ -11,10 +11,10 @@ $builder->addDefinitions([
 
             return $pdo;
         } catch (PDOException $e) {
-            echo "<h1>Erro ao conectar ao banco de dados</h1>";
+            echo "<h2>Erro ao se conectar no banco de dados</h2>";
             exit();
 
-            // throw new RuntimeException('Erro ao conectar ao banco de dados: ' . $e->getMessage());
+            // throw new RuntimeException("Erro ao se conectar no banco de dados: " . $e->getMessage());
         }
     },
     \League\Plates\Engine::class => function () {
