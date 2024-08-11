@@ -6,6 +6,7 @@
   },
   "require": {
     "ext-pdo": "*",
+    "ext-mbstring": "*",
     "psr/http-message": "^2.0",
     "nyholm/psr7": "^1.8",
     "nyholm/psr7-server": "^1.1",
