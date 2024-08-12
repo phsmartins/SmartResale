@@ -10,14 +10,35 @@ main {
     width: 40%;
     height: 100vh;
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 2%;
+
     background-color: #87B3DD;
+}
+
+.welcome__box img.welcome__logo {
+    width: 28rem;
+}
+
+.welcome__box img.welcome__image-login {
+    width: 30rem;
+
+    margin: 2rem 0 5rem;
+}
+
+.welcome__box h1 {
+    color: #030234;
+    font-size: 3.8rem;
+    text-align: center;
+
+    max-width: 50rem;
 }
 
 .form__box {
     width: 60%;
     height: 100vh;
-}
-
-h1 {
-    color: #030234;
 }
