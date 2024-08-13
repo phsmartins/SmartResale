@@ -21,6 +21,6 @@ readonly class LoginFormController implements RequestHandlerInterface
             return new Response(302, ['Location' => '/']);
         }
 
-        return new Response(200, body: $this->engine->render('login/login-form'));
+        return new Response(200, body: $this->engine->render('user/login-form'));
     }
 }

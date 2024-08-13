@@ -73,6 +73,13 @@ main {
     margin: 1rem 0 2.5rem;
 }
 
+.form__box form p.error-message-login {
+    font-size: 1.8rem;
+    color: red;
+
+    margin: 0 0 2rem;
+}
+
 .form__box form label {
     font-size: 1.8rem;
     color: #030234;
@@ -111,19 +118,18 @@ main {
     opacity: .9;
 }
 
-.form__box form span {
-    cursor: pointer;
-
+.form__box form a.other-form {
     font-size: 1.6rem;
     text-align: center;
     color: #030234;
+    text-decoration: none;
 
     margin-top: 1.5rem;
 
     transition: .4s;
 }
 
-.form__box form span:hover {
+.form__box form a.other-form:hover {
     opacity: .8;
 }
 

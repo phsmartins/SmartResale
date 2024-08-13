@@ -1,43 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php  $this->layout('layout-login') ?>
+<form method="post">
+    <h2>Olá, bem-vindo!</h2>
+    <p>Digite as credênciais para acessar o sistema</p>
 
-    <link rel="stylesheet" href="/style/main.css">
-    <link rel="stylesheet" href="/style/login.css">
+    <?php if (array_key_exists('error_message_login', $_SESSION)): ?>
+        <p class="error-message-login">
+            <?= $_SESSION['error_message_login'] ?>
 
-    <title>SmartResale | Entre ou Cadastre-se</title>
-</head>
-<body>
+            <?php unset($_SESSION['error_message_login']); ?>
+        </p>
+    <?php endif; ?>
 
-    <main>
-        <div class="welcome__box">
-            <img class="welcome__logo" src="/images/logo/logo-branca-SmartResale.png" alt="Logo da SmartResale" />
+    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']; ?>">
 
-            <img class="welcome__image-login" src="/images/image-login.png" alt="Imagem para representar gestão em relação ao sistema" />
-            <h1>Controle suas vendas do começo ao fim</h1>
-        </div>
+    <label for="email">E-mail:</label>
+    <input
+            type="text"
+            name="email"
+            id="email"
+            value="<?= isset($_SESSION['user_email_login']) ? htmlspecialchars($_SESSION['user_email_login']) : ''; ?>"
+            placeholder="Informe seu e-mail"
+    />
+    <?php unset($_SESSION['user_email_login']); ?>
 
-        <div class="form__box">
-            <form method="post">
-                <h2>Olá, bem-vindo!</h2>
-                <p>Digite as credênciais para acessar o sistema</p>
+    <label for="password">Senha:</label>
+    <input type="password" name="password" id="password" placeholder="Informe sua senha" required />
 
-                <label for="email">E-mail:</label>
-                <input type="email" name="email" id="email" placeholder="Informe seu e-mail" required />
+    <button type="submit">Acessar</button>
 
-                <label for="password">Senha:</label>
-                <input type="password" name="password" id="password" placeholder="Informe sua senha" required />
-
-                <button type="submit">Acessar</button>
-
-                <span id="registrationForm">Não tem conta? Cadastre-se</span>
-            </form>
-
-            <div class="developed">
-                <p>Desenvolvido por <a target="_blank" href="https://github.com/phsmartins">Pedro Martins</a> | 2024 - v0.1.0-alpha</p>
-            </div>
-        </div>
-    </main>
-</body>
+    <a href="/signup" class="other-form">Não tem conta? Cadastre-se</a>
+</form>

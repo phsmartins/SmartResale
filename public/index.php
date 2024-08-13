@@ -15,9 +15,14 @@ $httpMethod = $_SERVER['REQUEST_METHOD'];
 session_start();
 session_regenerate_id();
 
-$isLoginRoute = $pathInfo === '/login';
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(uniqid(mt_rand(), true));
+}
 
-if (!array_key_exists('logged_in', $_SESSION) && !$isLoginRoute) {
+$isLoginRoute = $pathInfo === '/login';
+$isSignUpRoute = $pathInfo === '/signup';
+
+if (!array_key_exists('logged_in', $_SESSION) && !$isLoginRoute && !$isSignUpRoute) {
     header('location: /login');
     return;
 }

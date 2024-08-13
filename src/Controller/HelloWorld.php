@@ -20,7 +20,8 @@ readonly class HelloWorld implements RequestHandlerInterface
         return new Response(
             202,
             body: $this->engine->render(
-                'hello-world'
+                'hello-world',
+                ['userId' => $_SESSION['user_id']]
             )
         );
     }
