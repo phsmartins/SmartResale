@@ -25,20 +25,19 @@
                 <p>Digite as credênciais para acessar o sistema</p>
 
                 <label for="email">E-mail:</label>
-                <input type="email" name="email" id="email" placeholder="Informe seu e-mail" />
+                <input type="email" name="email" id="email" placeholder="Informe seu e-mail" required />
 
                 <label for="password">Senha:</label>
-                <input type="password" name="password" id="password" placeholder="Informe sua senha" />
+                <input type="password" name="password" id="password" placeholder="Informe sua senha" required />
 
                 <button type="submit">Acessar</button>
 
-                <span>Não tem conta? Cadastre-se</span>
+                <span id="registrationForm">Não tem conta? Cadastre-se</span>
             </form>
 
             <div class="developed">
-                <p>Desenvolvido por <a href="https://github.com/phsmartins">Pedro Martins</a> | 2024 - v1.0.0</p>
+                <p>Desenvolvido por <a target="_blank" href="https://github.com/phsmartins">Pedro Martins</a> | 2024 - v0.1.0-alpha</p>
             </div>
         </div>
     </main>
-
 </body>

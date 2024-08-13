@@ -127,4 +127,20 @@ readonly class UserRepository
 
         return $userData;
     }
+
+    public function updatePassword(string $password, int $id): bool
+    {
+        $querySql = "
+            UPDATE users SET
+                password = :password 
+            WHERE id = :id;
+        ";
+
+        $statement = $this->pdo->prepare($querySql);
+
+        $statement->bindValue(':password', password_hash($password, PASSWORD_ARGON2ID));
+        $statement->bindValue(':id', $id);
+
+        return $statement->execute();
+    }
 }

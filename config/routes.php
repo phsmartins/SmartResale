@@ -6,4 +6,5 @@ return [
 
     # LOGIN
     'GET|/login' => \Smart\Resale\Controller\User\LoginFormController::class,
+    'POST|/login' => \Smart\Resale\Controller\User\LoginController::class,
 ];
