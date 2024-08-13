@@ -32,13 +32,107 @@ main {
 
 .welcome__box h1 {
     color: #030234;
-    font-size: 3.8rem;
+    font-size: 3.4rem;
     text-align: center;
 
     max-width: 50rem;
 }
 
 .form__box {
+    position: relative;
+
     width: 60%;
     height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: #727272 0 0 50px 8px;
+}
+
+.form__box form {
+    display: flex;
+    flex-direction: column;
+
+    width: 40rem;
+}
+
+.form__box form h2 {
+    font-size: 3.4rem;
+    color: #030234;
+    text-align: center;
+}
+
+.form__box form p {
+    font-size: 1.6rem;
+    color: #727272;
+    text-align: center;
+
+    margin: 1rem 0 2.5rem;
+}
+
+.form__box form label {
+    font-size: 1.8rem;
+    color: #030234;
+
+    margin-bottom: .5rem;
+}
+
+.form__box form input {
+    font-size: 1.6rem;
+
+    padding: 1.2rem 1rem;
+    margin-bottom: 1.5rem;
+
+    border-radius: .6rem;
+    border: 1px solid #727272;
+}
+
+.form__box form button {
+    cursor: pointer;
+
+    font-size: 2rem;
+    color: #FFFFFF;
+    font-weight: 700;
+
+    padding: 1.2rem 0;
+
+    border-radius: .6rem;
+    border: 1px solid #727272;
+
+    background-color: #030234;
+
+    transition: .4s;
+}
+
+.form__box form button:hover {
+    opacity: .9;
+}
+
+.form__box form span {
+    cursor: pointer;
+
+    font-size: 1.6rem;
+    text-align: center;
+    color: #030234;
+
+    margin-top: 1.5rem;
+
+    transition: .4s;
+}
+
+.form__box form span:hover {
+    opacity: .8;
+}
+
+.form__box .developed {
+    position: absolute;
+    bottom: 2.5rem;
+
+    width: 100%;
+
+    text-align: center;
+    font-size: 1.4rem;
 }
