@@ -17,7 +17,7 @@ main {
 
     padding: 0 2%;
 
-    background-color: #87B3DD;
+    background: linear-gradient(to bottom, #226eb6, #87B3DD);
 }
 
 .welcome__box img.welcome__logo {

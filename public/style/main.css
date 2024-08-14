@@ -11,3 +11,17 @@
 
     font-family: "Roboto", sans-serif;
 }
+
+/* Estilo para os alertas da bilioteca SweetAlert2 */
+
+.swal2-title {
+    font-size: 2.8rem;
+}
+
+.swal2-confirm {
+    font-size: 1.6rem;
+}
+
+#swal2-html-container {
+    font-size: 1.8rem;
+}

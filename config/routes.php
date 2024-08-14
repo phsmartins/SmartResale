@@ -9,4 +9,5 @@ return [
     'POST|/login' => \Smart\Resale\Controller\User\LoginController::class,
 
     'GET|/signup' => \Smart\Resale\Controller\User\SignUpFormController::class,
+    'POST|/signup' => \Smart\Resale\Controller\User\SignUpController::class,
 ];
