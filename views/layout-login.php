@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/style/main.css">
     <link rel="stylesheet" href="/style/login.css">
 
+    <link rel="icon" href="/images/icon-smartResale.png" type="image/x-icon">
+
     <title>SmartResale | Entre ou Cadastre-se</title>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
