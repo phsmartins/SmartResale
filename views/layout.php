@@ -61,7 +61,7 @@
             </div>
 
             <div class="menu__option">
-                <a href="/"><i class="fa-solid fa-gear"></i> Configurações</a>
+                <a href="/config/user"><i class="fa-solid fa-gear"></i> Configurações</a>
             </div>
         </aside>
 

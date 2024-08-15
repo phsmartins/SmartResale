@@ -12,4 +12,8 @@ return [
     'POST|/signup' => \Smart\Resale\Controller\User\SignUpController::class,
 
     'GET|/logout' => \Smart\Resale\Controller\User\LogoutController::class,
+
+    # CONFIG
+    'GET|/config/user' => \Smart\Resale\Controller\User\UpdateUserFormController::class,
+    'POST|/config/user' => \Smart\Resale\Controller\User\UpdateUserController::class,
 ];

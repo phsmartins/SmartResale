@@ -1,0 +1,80 @@
+h1 {
+    font-size: 3.8rem;
+    color: #030234;
+
+    margin-bottom: 4rem;
+}
+
+form {
+    display: block;
+
+    margin-bottom: 7rem;
+}
+
+h2 {
+    color: #030234;
+    font-size: 2.4rem;
+
+    padding-top: 1.5rem;
+    margin-bottom: 2rem;
+
+    border-top: .2rem solid #727272;
+}
+
+label {
+    display: block;
+
+    font-size: 1.6rem;
+    color: #030234;
+
+    margin-bottom: .5rem;
+}
+
+input {
+    width: 100%;
+
+    margin-bottom: 2rem;
+    padding: 1.2rem 1rem;
+
+    border-radius: .6rem;
+    border: 1px solid #727272;
+
+    font-size: 1.6rem;
+}
+
+div.input_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+div.input_box div {
+    width: 49%;
+}
+
+div.password_box {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+button {
+    cursor: pointer;
+
+    font-size: 1.8rem;
+    padding: .8rem 2rem;
+    color: #FFFFFF;
+
+    background-color: #226eb6;
+    border-radius: .6rem;
+    border: 1px solid #226eb6;
+
+    transition: .4s;
+}
+
+button:hover {
+    background-color: #2582da;
+    border: 1px solid #2582da;
+
+}
