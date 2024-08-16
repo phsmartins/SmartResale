@@ -3,11 +3,11 @@
     <h2>Olá, bem-vindo!</h2>
     <p>Informe seus dados para criar uma conta</p>
 
-    <?php if (array_key_exists('error_message_login', $_SESSION)): ?>
+    <?php if (array_key_exists('error_message', $_SESSION)): ?>
         <p class="error-message-login">
-            <?= $_SESSION['error_message_login'] ?>
+            <?= $_SESSION['error_message'] ?>
 
-            <?php unset($_SESSION['error_message_login']); ?>
+            <?php unset($_SESSION['error_message']); ?>
         </p>
     <?php endif; ?>
 
@@ -46,18 +46,18 @@
 </form>
 
 <?php if (
-    array_key_exists('error_title_message_login', $_SESSION) &&
-    array_key_exists('error_text_message_login', $_SESSION)
+    array_key_exists('error_title_message', $_SESSION) &&
+    array_key_exists('error_text_message', $_SESSION)
 ): ?>
     <script>
         errorMessage(
-            "<?= $_SESSION['error_title_message_login'] ?>",
-            "<?= $_SESSION['error_text_message_login'] ?>"
+            "<?= $_SESSION['error_title_message'] ?>",
+            "<?= $_SESSION['error_text_message'] ?>"
         );
     </script>
 <?php endif; ?>
 
 <?php
-    unset($_SESSION['error_title_message_login']);
-    unset($_SESSION['error_text_message_login']);
+    unset($_SESSION['error_title_message']);
+    unset($_SESSION['error_text_message']);
 ?>

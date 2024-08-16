@@ -3,11 +3,11 @@
     <h2>Olá, bem-vindo!</h2>
     <p>Digite as credênciais para acessar o sistema</p>
 
-    <?php if (array_key_exists('error_message_login', $_SESSION)): ?>
+    <?php if (array_key_exists('error_message', $_SESSION)): ?>
         <p class="error-message-login">
-            <?= $_SESSION['error_message_login'] ?>
+            <?= $_SESSION['error_message'] ?>
 
-            <?php unset($_SESSION['error_message_login']); ?>
+            <?php unset($_SESSION['error_message']); ?>
         </p>
     <?php endif; ?>
 

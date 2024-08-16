@@ -10,7 +10,10 @@
     <link rel="icon" href="/images/icon-smartResale.png" type="image/x-icon">
 
     <script src="https://kit.fontawesome.com/545cb6747b.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script defer src="/javascript/menuHeader.js"></script>
+    <script src="/javascript/alertFunctions.js"></script>
 
     <title>SmartResale</title>
 </head>
@@ -69,4 +72,38 @@
             <?= $this->section('content'); ?>
         </section>
     </main>
+
+    <?php if (
+        array_key_exists('success_title_message', $_SESSION) &&
+        array_key_exists('success_text_message', $_SESSION)
+    ): ?>
+        <script>
+            successMessage(
+                "<?= $_SESSION['success_title_message'] ?>",
+                "<?= $_SESSION['success_text_message'] ?>"
+            );
+        </script>
+    <?php endif; ?>
+
+    <?php
+        unset($_SESSION['success_title_message']);
+        unset($_SESSION['success_text_message']);
+    ?>
+
+    <?php if (
+        array_key_exists('error_title_message', $_SESSION) &&
+        array_key_exists('error_text_message', $_SESSION)
+    ): ?>
+        <script>
+            errorMessage(
+                "<?= $_SESSION['error_title_message'] ?>",
+                "<?= $_SESSION['error_text_message'] ?>"
+            );
+        </script>
+    <?php endif; ?>
+
+    <?php
+        unset($_SESSION['error_title_message']);
+        unset($_SESSION['error_text_message']);
+    ?>
 </body>

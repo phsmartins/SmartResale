@@ -7,11 +7,11 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Smart\Resale\Repository\UserRepository;
-use Smart\Resale\Traits\FlashMessageLoginTrait;
+use Smart\Resale\Traits\FlashMessageTrait;
 
 readonly class LoginController implements RequestHandlerInterface
 {
-    use FlashMessageLoginTrait;
+    use FlashMessageTrait;
 
     public function __construct(
         private UserRepository $userRepository,

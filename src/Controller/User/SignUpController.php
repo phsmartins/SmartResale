@@ -8,11 +8,11 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Smart\Resale\Entity\User;
 use Smart\Resale\Repository\UserRepository;
-use Smart\Resale\Traits\FlashMessageLoginTrait;
+use Smart\Resale\Traits\FlashMessageTrait;
 
 readonly class SignUpController implements RequestHandlerInterface
 {
-    use FlashMessageLoginTrait;
+    use FlashMessageTrait;
 
     public function __construct(
         private UserRepository $userRepository,
@@ -33,13 +33,17 @@ readonly class SignUpController implements RequestHandlerInterface
         $password = filter_var($parsedBody['password']);
 
         $_SESSION['user_name_sign'] = $name;
+        $_SESSION['user_email_sign'] = $email;
+
+        if (empty($name)) {
+            $this->addErrorMessage("O campo 'Nome completo' não pode ser vazio");
+            return new Response(302, ['Location' => '/signup']);
+        }
 
         if ($email === false || $email === null) {
             $this->addErrorMessage("Digite um e-mail válido");
             return new Response(302, ['Location' => '/signup']);
         }
-
-        $_SESSION['user_email_sign'] = $email;
 
         if ($email != $confirmEmail) {
             $this->addErrorMessage("Os e-mails informados não são iguais");

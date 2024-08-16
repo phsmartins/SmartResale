@@ -34,19 +34,19 @@
     </main>
 
     <?php if (
-            array_key_exists('success_title_message_login', $_SESSION) &&
-            array_key_exists('success_text_message_login', $_SESSION)
+            array_key_exists('success_title_message', $_SESSION) &&
+            array_key_exists('success_text_message', $_SESSION)
     ): ?>
         <script>
             successMessage(
-                "<?= $_SESSION['success_title_message_login'] ?>",
-                "<?= $_SESSION['success_text_message_login'] ?>"
+                "<?= $_SESSION['success_title_message'] ?>",
+                "<?= $_SESSION['success_text_message'] ?>"
             );
         </script>
     <?php endif; ?>
 
     <?php
-        unset($_SESSION['success_title_message_login']);
-        unset($_SESSION['success_text_message_login']);
+        unset($_SESSION['success_title_message']);
+        unset($_SESSION['success_text_message']);
     ?>
 </body>

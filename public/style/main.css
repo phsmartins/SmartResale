@@ -25,6 +25,7 @@
 
 .swal2-title {
     font-size: 2.8rem;
+    border: none;
 }
 
 .swal2-confirm {

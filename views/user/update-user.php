@@ -1,7 +1,7 @@
 <?php
     $this->layout('layout');
 
-    /** @var \Smart\Resale\Entity\User $user */
+    /** @var $user */
 ?>
 
 <link rel="stylesheet" href="/style/config.css">
@@ -14,14 +14,14 @@
 
         <label for="name">Nome completo:</label>
         <input
-            value="<?= $user->getName(); ?>"
+            value="<?= $user['name']; ?>"
             type="text" id="name" name="name"
             placeholder="Digite seu nome completo"
         />
 
         <label for="email">E-mail:</label>
         <input
-            value="<?= $user->getEmail(); ?>"
+            value="<?= $user['email']; ?>"
             type="text" id="email" name="email"
             placeholder="Digite seu e-mail"
         />

@@ -80,7 +80,7 @@ readonly class UserRepository
         return $statement->execute();
     }
 
-    public function findUserData(int $id): ?User
+    public function findUserData(int $id): ?array
     {
         $querySql = "SELECT * FROM users WHERE id = :id;";
 
@@ -94,19 +94,7 @@ readonly class UserRepository
             return null;
         }
 
-        return $this->hydrateUser($userData);
-    }
-
-    private function hydrateUser(array $userData): User
-    {
-        $user = new User(
-            $userData["name"],
-            $userData["email"],
-            $userData["password"],
-        );
-        $user->setId($userData['id']);
-
-        return $user;
+        return $userData;
     }
 
     public function findUserByEmail(string $email): ?array
