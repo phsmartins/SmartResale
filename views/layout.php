@@ -29,7 +29,7 @@
 
         <a style="text-decoration: none" href="/logout"><div id="logout" class="header__logout">
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
-            <p>Sair</p>
+            <p class="logout__text">Sair</p>
         </div></a>
     </header>
 

@@ -52,4 +52,25 @@
             <button type="submit">Atualizar</button>
         </div>
     </form>
+
+    <form action="/config/remove-user" method="post">
+        <h2>Deletar conta permanentemente</h2>
+
+        <p class="delete_alert">Atenção! Sua conta será excluída permanentemente e todos os seus dados serão apagados</p>
+        <p>Se você realmente deseja efetuar essa ação, digite sua senha e clique em "Deletar"</p>
+
+        <input type="password" style="display: none" />
+
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password_delete" placeholder="Digite sua senha" />
+
+        <div class="password_box">
+            <button
+                    style="background-color: #f52525; border: none"
+                    type="submit"
+            >
+                Deletar
+            </button>
+        </div>
+    </form>
 </div>

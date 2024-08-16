@@ -85,3 +85,13 @@ button:hover {
     border: 1px solid #2582da;
 
 }
+
+p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+p.delete_alert {
+    margin-bottom: 1rem;
+    font-weight: 700;
+}

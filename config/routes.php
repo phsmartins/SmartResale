@@ -16,4 +16,5 @@ return [
     # CONFIG
     'GET|/config/user' => \Smart\Resale\Controller\User\UpdateUserFormController::class,
     'POST|/config/user' => \Smart\Resale\Controller\User\UpdateUserController::class,
+    'POST|/config/remove-user' => \Smart\Resale\Controller\User\RemoveUserController::class,
 ];

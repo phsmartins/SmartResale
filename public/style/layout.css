@@ -54,10 +54,12 @@ header .header__logout i {
     margin-right: 1rem;
 }
 
-header .header__logout p {
+header .header__logout p.logout__text {
     font-size: 1.8rem;
     font-weight: 700;
     color: #FFFFFF;
+
+    margin: 0;
 }
 
 main {
