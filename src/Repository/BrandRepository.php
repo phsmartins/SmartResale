@@ -57,4 +57,36 @@ readonly class BrandRepository
 
         return $statement->rowCount();
     }
+
+    public function findAllBrandsByUserId(int $userId): ?array
+    {
+        $querySql = "SELECT * FROM brands WHERE user_id = :user_id";
+
+        $statement = $this->pdo->prepare($querySql);
+        $statement->bindValue(":user_id", $userId);
+
+        if (!$statement->execute()) {
+            return null;
+        }
+
+        $brandsList = $statement->fetchAll(\PDO::FETCH_ASSOC);
+
+        return array_map(
+            $this->hydrateBrand(...),
+            $brandsList
+        );
+    }
+
+    private function hydrateBrand(array $brandData): Brand
+    {
+        $brand = new Brand(
+            $brandData['user_id'],
+            $brandData['name'],
+            $brandData['description'],
+        );
+
+        $brand->setId($brandData['id']);
+
+        return $brand;
+    }
 }
