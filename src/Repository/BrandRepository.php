@@ -34,4 +34,27 @@ readonly class BrandRepository
 
         return $resultAddBrand;
     }
+
+    public function updateBrand(Brand $brand): int
+    {
+        $querySql = "
+            UPDATE brands SET
+                name = :brand_name,
+                description = :description
+            WHERE id = :id AND user_id = :user_id;
+        ";
+
+        $statement = $this->pdo->prepare($querySql);
+
+        $statement->bindValue(":brand_name", $brand->getBrandName());
+        $statement->bindValue(":description", $brand->getDescription());
+        $statement->bindValue(":id", $brand->getId());
+        $statement->bindValue(":user_id", $brand->getUserId());
+
+        if (!$statement->execute()) {
+            return -1;
+        }
+
+        return $statement->rowCount();
+    }
 }
