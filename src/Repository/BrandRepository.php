@@ -58,6 +58,22 @@ readonly class BrandRepository
         return $statement->rowCount();
     }
 
+    public function removeBrand(int $id, int $userId): int
+    {
+        $querySql = "DELETE FROM brands WHERE id = :id AND user_id = :user_id";
+
+        $statement = $this->pdo->prepare($querySql);
+
+        $statement->bindValue(":id", $id);
+        $statement->bindValue(":user_id", $userId);
+
+        if (!$statement->execute()) {
+            return -1;
+        }
+
+        return $statement->rowCount();
+    }
+
     public function findAllBrandsByUserId(int $userId): ?array
     {
         $querySql = "SELECT * FROM brands WHERE user_id = :user_id";
