@@ -48,7 +48,7 @@
             </div>
 
             <div class="menu__option">
-                <a href="/"><i class="fa-solid fa-tag"></i> Marcas</a>
+                <a href="/brands"><i class="fa-solid fa-tag"></i> Marcas</a>
             </div>
 
             <div class="menu__option">
