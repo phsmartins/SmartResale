@@ -19,5 +19,6 @@ return [
     'POST|/config/remove-user' => \Smart\Resale\Controller\User\RemoveUserController::class,
 
     # BRAND
-    'GET|/brands' => \Smart\Resale\Controller\Brand\BrandListController::class,
+    'GET|/brands-list' => \Smart\Resale\Controller\Brand\BrandListController::class,
+    'GET|/brands' => \Smart\Resale\Controller\Brand\BrandsController::class,
 ];

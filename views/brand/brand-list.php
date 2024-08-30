@@ -1,21 +1,14 @@
 <?php
-    $this->layout('layout');
 
-    /** @var \Smart\Resale\Entity\Brand[] $brandList */
-?>
+/** @var \Smart\Resale\Entity\Brand[] $brandList */
 
-<h1>Marcas cadastradas</h1>
-
-<?php if (empty($brandList)): ?>
-    <h1>Você não cadastrou nenhuma marca até agora</h1>
-<?php else: ?>
-    <ul>
-
-        <?php foreach ($brandList as $brand): ?>
-
-            <li><?= $brand->getBrandName(); ?></li>
-
-        <?php endforeach; ?>
-
-    </ul>
-<?php endif; ?>
+foreach ($brandList as $brand) {
+    echo "
+        <tr>
+            <td>{$brand->getId()}</td>
+            <td>{$brand->getBrandName()}</td>
+            <td>R$ 15000,00</td>
+            <td>R$ 1000,00</td>
+        </tr>
+    ";
+}
