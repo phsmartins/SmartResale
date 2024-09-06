@@ -62,7 +62,7 @@ header .header__logout p.logout__text {
     margin: 0;
 }
 
-main {
+main.mainMenu {
     display: flex;
 }
 
@@ -106,4 +106,55 @@ section {
     padding: 3rem 5rem;
 
     width: 100%;
+}
+
+/* Estilização das funcionalidades base do sistema */
+div.list_items__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 2rem;
+}
+
+div.list_items__title h1 {
+    font-size: 3.8rem;
+    color: #030234;
+}
+
+div.list_items__title a {
+    font-size: 1.6rem;
+    color: #FFFFFF;
+    text-decoration: none;
+
+    padding: 1rem 2rem;
+
+    background-color:  #52B963;
+    border-radius: .5rem;
+
+    transition: .4s;
+}
+
+div.list_items__title a:hover {
+    background-color: #45a955;
+}
+
+div.table_container {
+    overflow: auto;
+
+    margin-top: 5rem;
+}
+
+.list_items table {
+    font-size: 1.6rem;
+}
+
+.list_items table td,
+.list_items table th {
+    padding: 1.2rem;
+}
+
+#noItemsFound {
+    font-size: 1.6rem;
+    text-align: center;
 }

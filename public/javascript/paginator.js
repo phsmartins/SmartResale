@@ -8,7 +8,7 @@ const listItem = async (url) => {
 
     if (!data || data.trim() === "") {
         table.style.display = "none";
-        noItemsFound.textContent = "Nenhum item encontrado";
+        noItemsFound.textContent = "Whoops... Nenhum registro encontrado";
     } else {
         tbody.innerHTML = data;
     }
@@ -16,6 +16,13 @@ const listItem = async (url) => {
 
 if (window.location.pathname === "/brands") {
     url = "http://localhost:8888/brands-list";
+} else {
+    url = "";
 }
 
-listItem(url)
+if (url === "" || !url) {
+    table.style.display = "none";
+    noItemsFound.textContent = "Erro ao buscar itens. Se o erro persistir, entre em contato com o suporte";
+} else {
+    listItem(url)
+}
