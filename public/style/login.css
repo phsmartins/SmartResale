@@ -17,7 +17,7 @@ main {
 
     padding: 0 2%;
 
-    background: linear-gradient(to bottom, #226eb6, #87B3DD);
+    background: linear-gradient(to bottom, var(--primary-light-color), var(--secondary-light-color));
 }
 
 .welcome__box img.welcome__logo {
@@ -31,7 +31,7 @@ main {
 }
 
 .welcome__box h1 {
-    color: #030234;
+    color: var(--primary-dark-color);
     font-size: 3.4rem;
     text-align: center;
 
@@ -61,7 +61,7 @@ main {
 
 .form__box form h2 {
     font-size: 3.4rem;
-    color: #030234;
+    color: var(--primary-dark-color);
     text-align: center;
 }
 
@@ -82,7 +82,7 @@ main {
 
 .form__box form label {
     font-size: 1.8rem;
-    color: #030234;
+    color: var(--primary-dark-color);
 
     margin-bottom: .5rem;
 }
@@ -94,22 +94,22 @@ main {
     margin-bottom: 1.5rem;
 
     border-radius: .6rem;
-    border: 1px solid #727272;
+    border: 1px solid var(--color-input-border);
 }
 
 .form__box form button {
     cursor: pointer;
 
     font-size: 2rem;
-    color: #FFFFFF;
+    color: var(--text-light-color);
     font-weight: 700;
 
     padding: 1.2rem 0;
 
     border-radius: .6rem;
-    border: 1px solid #727272;
+    border: 1px solid var(--primary-dark-color);
 
-    background-color: #030234;
+    background-color: var(--primary-dark-color);
 
     transition: .4s;
 }
@@ -121,7 +121,7 @@ main {
 .form__box form a.other-form {
     font-size: 1.6rem;
     text-align: center;
-    color: #030234;
+    color: var(--primary-dark-color);
     text-decoration: none;
 
     margin-top: 1.5rem;

@@ -1,6 +1,6 @@
 h1 {
     font-size: 3.8rem;
-    color: #030234;
+    color: var(--primary-dark-color);
 
     margin-bottom: 4rem;
 }
@@ -15,24 +15,24 @@ form {
     font-size: 1.6rem;
     margin: 1rem 0 2rem;
 
-    color: red;
+    color: var(--delete-background-color);
 }
 
 h2 {
-    color: #030234;
+    color: var(--primary-dark-color);
     font-size: 2.4rem;
 
     padding-top: 1.5rem;
     margin-bottom: 2rem;
 
-    border-top: .2rem solid #727272;
+    border-top: .2rem solid var(--color-input-border);
 }
 
 label {
     display: block;
 
     font-size: 1.6rem;
-    color: #030234;
+    color: var(--primary-dark-color);
 
     margin-bottom: .5rem;
 }
@@ -44,7 +44,7 @@ input {
     padding: 1.2rem 1rem;
 
     border-radius: .6rem;
-    border: 1px solid #727272;
+    border: 1px solid var(--color-input-border);
 
     font-size: 1.6rem;
 }
@@ -71,18 +71,18 @@ button {
 
     font-size: 1.8rem;
     padding: .8rem 2rem;
-    color: #FFFFFF;
+    color: var(--text-light-color);
 
-    background-color: #226eb6;
+    background-color: var(--upgrade-background-color);
     border-radius: .6rem;
-    border: 1px solid #226eb6;
+    border: 1px solid var(--upgrade-background-color);
 
     transition: .4s;
 }
 
 button:hover {
-    background-color: #2582da;
-    border: 1px solid #2582da;
+    background-color: var(--upgrade-hover-background-color);
+    border: 1px solid var(--upgrade-hover-background-color);
 
 }
 

@@ -4,7 +4,7 @@
     /** @var $user */
 ?>
 
-<link rel="stylesheet" href="/style/config.css">
+<link rel="stylesheet" href="/style/configPage.css">
 
 <div class="container">
     <h1>Configurações</h1>
