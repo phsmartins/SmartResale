@@ -9,23 +9,9 @@
     </div>
     <hr>
 
-    <div class="table_container">
-        <table class="table table-striped">
-            <thead class="column">
-            <tr>
-                <th>ID</th>
-                <th>Marca</th>
-                <th>Faturamento</th>
-                <th>Lucro</th>
-                <th>Itens vendidos</th>
-                <th>Ações</th>
-            </tr>
-            </thead>
-            <tbody class="lines"></tbody>
-        </table>
+    <div>
+        <span class="list_items_js"></span>
     </div>
-
-    <p id="noItemsFound"></p>
 </main>
 
 <script src="/javascript/paginator.js"></script>

@@ -1,25 +1,40 @@
 <?php
+    /** @var \Smart\Resale\Entity\Brand[] $brandList */
+    /** @var ?int $page */
+?>
 
-/** @var \Smart\Resale\Entity\Brand[] $brandList */
+<?php if (!empty($brandList)): ?>
+    <div class='table_container'>
+        <table class='table table-striped'>
+            <thead class='column'>
+                <tr>
+                    <th>ID</th>
+                    <th>Marca</th>
+                    <th>Faturamento</th>
+                    <th>Lucro</th>
+                    <th>Itens vendidos</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody class='lines'>
 
-foreach ($brandList as $brand) {
-    echo "
-        <tr>
-            <td>{$brand->getId()}</td>
-            <td>{$brand->getBrandName()}</td>
-            <td>R$ 15000,00</td>
-            <td>R$ 1000,00</td>
-            <td>16</td>
-            <td>
-                <a 
-                    title='Editar'
-                    style='color: #FFFFFF; background-color: #2582da; padding: .7rem; border-radius: .5rem; margin-right: 1rem;' 
-                    href='/?{$brand->getId()}'><i class='fa-solid fa-pen-to-square'></i></a>
-                <a 
-                    title='Deletar'
-                    style='color: #FFFFFF; background-color: #ec0707; padding: .7rem; border-radius: .5rem' 
-                    href='/?{$brand->getId()}'><i class='fa-solid fa-trash'></i></a>
-            </td>
-        </tr>
-    ";
-}
+                <?php foreach ($brandList as $brand): ?>
+                    <tr>
+                        <td><?= $brand->getId(); ?></td>
+                        <td><?= $brand->getBrandName(); ?></td>
+                        <td>R$ 15000,00</td>
+                        <td>R$ 1000,00</td>
+                        <td>16</td>
+                        <td>
+                            <a class="actions" title='Editar' href='/?<?= $brand->getId(); ?>'><i class='fa-solid fa-pen-to-square'></i></a>
+                            <a class="actions" title='Deletar' href='/?<?= $brand->getId(); ?>'><i class='fa-solid fa-trash'></i></a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+
+            </tbody>
+        </table>
+    </div>
+<?php else: ?>
+    <p id="noItemsFound">Whoops... Nenhuma marca foi encontrada</p>
+<?php endif; ?>

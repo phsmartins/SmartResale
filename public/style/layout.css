@@ -154,7 +154,28 @@ div.table_container {
     padding: 1.2rem;
 }
 
+.actions {
+    color: var(--text-light-color);
+    background-color: var(--primary-light-color);
+    padding: .7rem;
+    border-radius: .5rem;
+    margin-right: 1rem;
+
+    transition: .4s;
+}
+
+.actions:nth-of-type(2) {
+    background-color: var(--delete-background-color);
+}
+
+.actions:hover {
+    color: var(--text-light-color);
+}
+
 #noItemsFound {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     text-align: center;
+    color: var(--tertiary-dark-color);
+
+    margin-top: 5rem;
 }

@@ -74,9 +74,11 @@ readonly class BrandRepository
         return $statement->rowCount();
     }
 
-    public function findAllBrandsByUserId(int $userId): ?array
+    public function findBrandsByUserId(int $userId, int $page, int $limit = 10): ?array
     {
-        $querySql = "SELECT * FROM brands WHERE user_id = :user_id";
+        $startOfPagination = $page * $limit - $limit;
+
+        $querySql = "SELECT * FROM brands WHERE user_id = :user_id ORDER BY name LIMIT {$startOfPagination}, {$limit}";
 
         $statement = $this->pdo->prepare($querySql);
         $statement->bindValue(":user_id", $userId);

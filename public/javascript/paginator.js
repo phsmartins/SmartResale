@@ -1,17 +1,10 @@
-const tbody = document.querySelector("tbody");
+const tbody = document.querySelector(".list_items_js");
 const table = document.querySelector("table");
 const noItemsFound = document.querySelector("#noItemsFound");
 
-const listItem = async (url) => {
-    const response = await fetch(url);
-    const data = await response.text();
-
-    if (!data || data.trim() === "") {
-        table.style.display = "none";
-        noItemsFound.textContent = "Whoops... Nenhum registro encontrado";
-    } else {
-        tbody.innerHTML = data;
-    }
+const listItem = async (url, page) => {
+    const response = await fetch(`${url}?page=${page}`);
+    tbody.innerHTML = await response.text();
 }
 
 if (window.location.pathname === "/brands") {
@@ -24,5 +17,5 @@ if (url === "" || !url) {
     table.style.display = "none";
     noItemsFound.textContent = "Erro ao buscar itens. Se o erro persistir, entre em contato com o suporte";
 } else {
-    listItem(url)
+    listItem(url, 1);
 }

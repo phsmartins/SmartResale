@@ -19,13 +19,19 @@ readonly class BrandListController implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        $brandList = $this->brandRepository->findAllBrandsByUserId($_SESSION['user_id']);
+        $queryParams = $request->getQueryParams();
+
+        $page = filter_var($queryParams['page'], FILTER_VALIDATE_INT);
+        $brandList = $this->brandRepository->findBrandsByUserId($_SESSION['user_id'], $page);
 
         return new Response(
             200,
             body: $this->engine->render(
                 'brand/brand-list',
-                ['brandList' => $brandList]
+                [
+                    'brandList' => $brandList,
+                    'page' => $page,
+                ]
             ));
     }
 }
