@@ -76,7 +76,7 @@ readonly class BrandRepository
 
     public function findBrandsByUserId(int $userId, int $page, int $limit = 10): ?array
     {
-        $startOfPagination = $page * $limit - $limit;
+        $startOfPagination = ($page * $limit) - $limit;
 
         $querySql = "SELECT * FROM brands WHERE user_id = :user_id ORDER BY name LIMIT {$startOfPagination}, {$limit}";
 
@@ -93,6 +93,20 @@ readonly class BrandRepository
             $this->hydrateBrand(...),
             $brandsList
         );
+    }
+
+    public function countAllBrands(int $userId): ?array
+    {
+        $querySql = "SELECT COUNT(id) AS result_brands_count FROM brands WHERE user_id = :user_id";
+
+        $statement = $this->pdo->prepare($querySql);
+        $statement->bindValue(":user_id", $userId);
+
+        if (!$statement->execute()) {
+            return null;
+        }
+
+        return $statement->fetch(\PDO::FETCH_ASSOC);
     }
 
     private function hydrateBrand(array $brandData): Brand
