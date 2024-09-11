@@ -22,13 +22,16 @@ readonly class BrandListController implements RequestHandlerInterface
         $userId = $_SESSION['user_id'];
 
         $queryParams = $request->getQueryParams();
-        $page = filter_var($queryParams['page'], FILTER_VALIDATE_INT);
 
-        $limit = 10;
+        $page = filter_var($queryParams['page'], FILTER_VALIDATE_INT);
+        $limit = filter_var($queryParams['limit'], FILTER_VALIDATE_INT);
+
         $brandList = $this->brandRepository->findBrandsByUserId($userId, $page, $limit);
 
         $brandCount = $this->brandRepository->countAllBrands($userId);
         $numberOfPages = ceil($brandCount['result_brands_count'] / $limit);
+
+        $numberOfButtonsOnPagination = 2;
 
         return new Response(
             200,
@@ -38,6 +41,7 @@ readonly class BrandListController implements RequestHandlerInterface
                     'brandList' => $brandList,
                     'page' => $page,
                     'numberOfPages' => $numberOfPages,
+                    'numberOfButtonsOnPagination' => $numberOfButtonsOnPagination,
                 ]
             ));
     }

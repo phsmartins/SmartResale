@@ -2,8 +2,9 @@ const tbody = document.querySelector(".list_items_js");
 const table = document.querySelector("table");
 const noItemsFound = document.querySelector("#noItemsFound");
 
-const listItem = async (url, page) => {
-    const response = await fetch(`${url}?page=${page}`);
+const listItem = async (url, page, limit) => {
+    const response = await fetch(`${url}?page=${page}&limit=${limit}`);
+    console.log(response);
     tbody.innerHTML = await response.text();
 }
 
@@ -17,5 +18,5 @@ if (url === "" || !url) {
     table.style.display = "none";
     noItemsFound.textContent = "Erro ao buscar itens. Se o erro persistir, entre em contato com o suporte";
 } else {
-    listItem(url, 1);
+    listItem(url, 1, 10);
 }

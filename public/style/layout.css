@@ -172,6 +172,35 @@ div.table_container {
     color: var(--text-light-color);
 }
 
+#paginationControls {
+    position: relative;
+    margin-top: 3rem;
+
+    text-align: center;
+}
+
+#paginationControlsNextPage button {
+    font-size: 1.4rem;
+    color: var(--text-light-color);
+
+    background-color: var(--tertiary-dark-color);
+    border: none;
+    border-radius: .4rem;
+
+    padding: .5rem 1rem;
+    margin: 0;
+}
+
+#paginationControlsNextPage button.activeButton {
+    background-color: var(--primary-light-color);
+}
+
+#paginationControlNumberPage {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 #noItemsFound {
     font-size: 1.8rem;
     text-align: center;
