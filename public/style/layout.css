@@ -173,10 +173,11 @@ div.table_container {
 }
 
 #paginationControls {
-    position: relative;
-    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    text-align: center;
+    margin-top: 3rem;
 }
 
 #paginationControlsNextPage button {
@@ -188,17 +189,10 @@ div.table_container {
     border-radius: .4rem;
 
     padding: .5rem 1rem;
-    margin: 0;
 }
 
 #paginationControlsNextPage button.activeButton {
     background-color: var(--primary-light-color);
-}
-
-#paginationControlNumberPage {
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 #noItemsFound {
@@ -207,4 +201,14 @@ div.table_container {
     color: var(--tertiary-dark-color);
 
     margin-top: 5rem;
+}
+
+#paginationControlNumberPage label {
+    font-size: 1.4rem;
+}
+
+#paginationControlNumberPageOptions {
+    font-size: 1.4rem;
+
+    margin-left: .5rem;
 }

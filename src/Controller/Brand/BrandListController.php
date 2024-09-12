@@ -40,8 +40,10 @@ readonly class BrandListController implements RequestHandlerInterface
                 [
                     'brandList' => $brandList,
                     'page' => $page,
+                    'limit' => $limit,
                     'numberOfPages' => $numberOfPages,
                     'numberOfButtonsOnPagination' => $numberOfButtonsOnPagination,
+                    'brandCount' => $brandCount['result_brands_count'],
                 ]
             ));
     }

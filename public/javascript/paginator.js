@@ -1,11 +1,23 @@
 const tbody = document.querySelector(".list_items_js");
-const table = document.querySelector("table");
-const noItemsFound = document.querySelector("#noItemsFound");
 
 const listItem = async (url, page, limit) => {
     const response = await fetch(`${url}?page=${page}&limit=${limit}`);
-    console.log(response);
     tbody.innerHTML = await response.text();
+
+    document.getElementById('pagination_options').addEventListener('click', () => {
+        setTimeout(() => {
+            scrollToBottom();
+        }, 100);
+    });
+
+    const scrollToBottom = () => {
+        document.documentElement.scrollTop = document.documentElement.scrollHeight;
+        document.body.scrollTop = document.body.scrollHeight; // Para compatibilidade com alguns navegadores
+    };
+
+    // Evento de clique no botão
+
+
 }
 
 if (window.location.pathname === "/brands") {
@@ -14,9 +26,6 @@ if (window.location.pathname === "/brands") {
     url = "";
 }
 
-if (url === "" || !url) {
-    table.style.display = "none";
-    noItemsFound.textContent = "Erro ao buscar itens. Se o erro persistir, entre em contato com o suporte";
-} else {
+if (!(url === "" || !url)) {
     listItem(url, 1, 10);
 }
