@@ -212,3 +212,7 @@ div.table_container {
 
     margin-left: .5rem;
 }
+
+#paginationControlNumberPage p {
+    font-size: 1.4rem;
+}

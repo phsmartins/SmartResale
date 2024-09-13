@@ -44,32 +44,38 @@
         <?php if ($brandCount > 10): ?>
             <div id="paginationControls">
                 <div id="paginationControlNumberPage">
-                    <label for="paginationControlNumberPageOptions">Quantidade de linhas:</label>
-                    <select id="paginationControlNumberPageOptions">
-                        <option disabled selected>
-                            <?= ($limit == $brandCount) ? 'Todas' : $limit ?>
-                        </option>
+                    <div>
+                        <label for="paginationControlNumberPageOptions">Quantidade de linhas:</label>
+                        <select id="paginationControlNumberPageOptions">
+                            <option disabled selected>
+                                <?= ($limit == $brandCount) ? 'Todas' : $limit ?>
+                            </option>
 
-                        <option onclick="listItem(<?= "'" . BRANDS_LIST_URL . "'" . ", 1," . NUMBER_OF_LINES[0] ?>)">
-                            <?= NUMBER_OF_LINES[0]; ?>
-                        </option>
+                            <option onclick="listItem(<?= "'" . BRANDS_LIST_URL . "'" . ", 1," . NUMBER_OF_LINES[0] ?>)">
+                                <?= NUMBER_OF_LINES[0]; ?>
+                            </option>
 
-                        <option onclick="listItem(<?= "'" . BRANDS_LIST_URL . "'" . ", 1," . NUMBER_OF_LINES[1] ?>)">
-                            <?= NUMBER_OF_LINES[1]; ?>
-                        </option>
+                            <option onclick="listItem(<?= "'" . BRANDS_LIST_URL . "'" . ", 1," . NUMBER_OF_LINES[1] ?>)">
+                                <?= NUMBER_OF_LINES[1]; ?>
+                            </option>
 
-                        <option onclick="listItem(<?= "'" . BRANDS_LIST_URL . "'" . ", 1," . NUMBER_OF_LINES[2] ?>)">
-                            <?= NUMBER_OF_LINES[2]; ?>
-                        </option>
+                            <option onclick="listItem(<?= "'" . BRANDS_LIST_URL . "'" . ", 1," . NUMBER_OF_LINES[2] ?>)">
+                                <?= NUMBER_OF_LINES[2]; ?>
+                            </option>
 
-                        <option onclick="listItem(<?= "'" . BRANDS_LIST_URL . "'" . ", 1," . NUMBER_OF_LINES[3] ?>)">
-                            <?= NUMBER_OF_LINES[3]; ?>
-                        </option>
+                            <option onclick="listItem(<?= "'" . BRANDS_LIST_URL . "'" . ", 1," . NUMBER_OF_LINES[3] ?>)">
+                                <?= NUMBER_OF_LINES[3]; ?>
+                            </option>
 
-                        <option onclick="listItem(<?= "'" . BRANDS_LIST_URL . "'" . ", 1," . $brandCount ?>)">
-                            Todas
-                        </option>
-                    </select>
+                            <option onclick="listItem(<?= "'" . BRANDS_LIST_URL . "'" . ", 1," . $brandCount ?>)">
+                                Todas
+                            </option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <p>Total de marcas: <?= $brandCount; ?></p>
+                    </div>
                 </div>
 
                 <div id="paginationControlsNextPage">
