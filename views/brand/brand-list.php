@@ -2,6 +2,7 @@
     /** @var \Smart\Resale\Entity\Brand[] $brandList */
     /** @var int $page */
     /** @var int $limit */
+    /** @var string $filter */
     /** @var int $numberOfPages */
     /** @var int $numberOfButtonsOnPagination */
     /** @var int $brandCount */
@@ -15,7 +16,11 @@
             <thead class='column'>
                 <tr>
                     <th>ID</th>
-                    <th style="width: 23%;">Marca</th>
+                    <th
+                        style="width: 23%;"
+                        onclick="listItem(<?= "'" . BRANDS_LIST_URL . "'" . ", {$page}," . NUMBER_OF_LINES[0]; ?>, 'name')">
+                        Marca
+                    </th>
                     <th>Faturamento</th>
                     <th>Lucro</th>
                     <th>Itens vendidos</th>

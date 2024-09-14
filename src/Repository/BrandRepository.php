@@ -74,7 +74,7 @@ readonly class BrandRepository
         return $statement->rowCount();
     }
 
-    public function findBrandsByUserId(int $userId, int $page, int $limit, string $filter = "name"): ?array
+    public function findBrandsByUserId(int $userId, int $page, int $limit, string $filter = "id"): ?array
     {
         $allowedFilters = ['id', 'name'];
         $filter = in_array($filter, $allowedFilters) ? $filter : 'id';
