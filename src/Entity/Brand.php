@@ -84,9 +84,9 @@ class Brand
         $this->profit = $value / 100;
     }
 
-    public function getQuantityOfProductsSold(): int
+    public function getQuantityOfProductsSold(): string
     {
-        return $this->quantityOfProductsSold;
+        return number_format($this->quantityOfProductsSold, "0", ",", ".");
     }
 
     public function setQuantityOfProductsSold(int $quantity): void

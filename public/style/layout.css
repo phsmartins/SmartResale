@@ -154,6 +154,23 @@ div.table_container {
     padding: 1.2rem;
 }
 
+.list_items table th {
+    cursor: pointer;
+    transition: .2s;
+}
+
+.list_items table th:hover {
+    color: var(--primary-light-color);
+}
+
+.list_items table th.tableActions {
+    cursor: default;
+}
+
+.list_items table th.tableActions:hover {
+    color: var(--secondary-dark-color);
+}
+
 .actions {
     color: var(--text-light-color);
     background-color: var(--primary-light-color);

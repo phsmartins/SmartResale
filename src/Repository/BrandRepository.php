@@ -74,17 +74,19 @@ readonly class BrandRepository
         return $statement->rowCount();
     }
 
-    public function findBrandsByUserId(int $userId, int $page, int $limit, string $filter = "id"): ?array
+    public function findBrandsByUserId(int $userId, int $page, int $limit, string $filter, int $order = 0): ?array
     {
-        $allowedFilters = ['id', 'name'];
+        $allowedFilters = ['name', 'invoicing', 'profit', 'quantity_products_sold'];
         $filter = in_array($filter, $allowedFilters) ? $filter : 'id';
+
+        $order = ($order === 1) ? 'DESC' : '';
 
         $startOfPagination = ($page * $limit) - $limit;
 
         $querySql = "
             SELECT * FROM brands 
             WHERE user_id = :user_id 
-            ORDER BY {$filter}
+            ORDER BY {$filter} {$order}
             LIMIT :start_pagination, :limit
         ";
 
@@ -128,6 +130,9 @@ readonly class BrandRepository
         );
 
         $brand->setId($brandData['id']);
+        $brand->setInvoicing($brandData['invoicing']);
+        $brand->setProfit($brandData['profit']);
+        $brand->setQuantityOfProductsSold($brandData['quantity_products_sold']);
 
         return $brand;
     }
