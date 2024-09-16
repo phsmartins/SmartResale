@@ -2,7 +2,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 98;
 
     display: flex;
     align-items: center;
@@ -109,6 +109,8 @@ section {
 }
 
 /* Estilização das funcionalidades base do sistema */
+
+/* Header */
 div.list_items__title {
     display: flex;
     align-items: center;
@@ -122,7 +124,7 @@ div.list_items__title h1 {
     color: var(--primary-dark-color);
 }
 
-div.list_items__title a {
+div.list_items__title button {
     font-size: 1.6rem;
     color: var(--text-light-color);
     text-decoration: none;
@@ -131,14 +133,128 @@ div.list_items__title a {
 
     background-color: var(--insert-background-color);
     border-radius: .5rem;
+    border: 1px solid var(--insert-background-color);
 
     transition: .4s;
 }
 
-div.list_items__title a:hover {
+div.list_items__title button:hover {
     background-color: var(--insert-hover-background-color);
 }
 
+/* Modal para inserir e atualizar */
+div#insertionModal {
+    display: none;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    z-index: 100;
+
+    background-color: #FFFFFF;
+    border-radius: .4rem;
+
+    padding: 3rem;
+
+    width: 100rem;
+}
+
+div#modalOverflow {
+    display: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modalTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 4rem;
+}
+
+.modalTitle h2 {
+    font-size: 2.8rem;
+    margin: 0;
+}
+
+.modalTitle p {
+    cursor: pointer;
+    font-size: 2.8rem;
+
+    margin: 0;
+}
+
+form.modalForm label {
+    font-size: 1.8rem;
+    color: var(--primary-dark-color);
+
+    margin-bottom: .5rem;
+}
+
+form.modalForm input {
+    font-size: 1.6rem;
+
+    padding: 1.2rem 1rem;
+    margin-bottom: 2.5rem;
+
+    border-radius: .6rem;
+    border: 1px solid var(--color-input-border);
+
+    width: 100%;
+}
+
+div.button_box_modal {
+    width: 100%;
+
+    text-align: right;
+}
+
+div.button_box_modal button {
+    cursor: pointer;
+
+    font-size: 1.8rem;
+    padding: .8rem 2rem;
+    color: var(--text-light-color);
+
+    background-color: var(--insert-background-color);
+    border-radius: .6rem;
+    border: 1px solid var(--insert-background-color);
+
+    transition: .4s;
+}
+
+div.button_box_modal button:hover {
+    background-color: var(--insert-hover-background-color);
+}
+
+.animationModal {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: slideUp .5s forwards;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -40%); /* Deslocado para baixo */
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%); /* Volta à posição original */
+    }
+}
+
+/* Paginação de elementos */
 div.table_container {
     overflow: auto;
 
