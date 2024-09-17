@@ -19,7 +19,7 @@
             <p id="closeInsertionModel" title="Fechar"><i class="fa-solid fa-xmark"></i></p>
         </div>
 
-        <form class="modalForm" method="post">
+        <form class="modalForm" method="post" action="/add-brand">
             <div class="input_box_modal">
                 <label for="name">Marca</label>
                 <input type="text" name="name" id="name" placeholder="Informe o nome da marca">
