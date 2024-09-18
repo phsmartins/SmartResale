@@ -237,10 +237,22 @@ div.button_box_modal button:hover {
     background-color: var(--insert-hover-background-color);
 }
 
+p.errorMessageModal {
+    color: var(--delete-background-color);
+    font-size: 1.6rem;
+
+    margin: -1rem 0 2rem;
+}
+
 .animationModal {
     opacity: 0;
     transition: opacity 0.5s ease, transform 0.5s ease;
     animation: slideUp .5s forwards;
+}
+
+.inputError {
+    border: 2px solid var(--delete-background-color) !important;
+    animation: vibrate 0.3s ease-in-out;
 }
 
 @keyframes slideUp {
@@ -252,6 +264,14 @@ div.button_box_modal button:hover {
         opacity: 1;
         transform: translate(-50%, -50%); /* Volta à posição original */
     }
+}
+
+@keyframes vibrate {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-.6rem); }
+    50% { transform: translateX(.6rem); }
+    75% { transform: translateX(-.6rem); }
+    100% { transform: translateX(0); }
 }
 
 /* Paginação de elementos */

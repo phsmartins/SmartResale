@@ -17,3 +17,19 @@ modalOverflow.addEventListener("click", () => {
     insertionModal.style.display = "none";
     modalOverflow.style.display = "none";
 });
+
+function errorModal() {
+    const insertionModal = document.querySelector("#insertionModal");
+    const inputBrandName = document.querySelector("#name");
+
+    insertionModal.classList.remove("animationModal");
+    insertionModal.style.transform = "translate(-50%, -50%)";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelector("#insertionModalButton").click();
+    });
+
+    setTimeout(() => {
+        inputBrandName.classList.add("inputError");
+    }, 150);
+}
