@@ -121,6 +121,20 @@ readonly class BrandRepository
         return $statement->fetch(\PDO::FETCH_ASSOC);
     }
 
+    public function findBrandById(int $brandId): ?Brand
+    {
+        $querySql = "SELECT * FROM brands WHERE id = :brand_id";
+
+        $statement = $this->pdo->prepare($querySql);
+        $statement->bindValue(":brand_id", $brandId);
+
+        if (!$statement->execute()) {
+            return null;
+        }
+
+        return $this->hydrateBrand($statement->fetch(\PDO::FETCH_ASSOC));
+    }
+
     private function hydrateBrand(array $brandData): Brand
     {
         $brand = new Brand(

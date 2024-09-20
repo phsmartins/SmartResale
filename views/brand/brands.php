@@ -1,5 +1,7 @@
 <?php
     $this->layout('layout');
+
+    /** @var \Smart\Resale\Entity\Brand $brand */
 ?>
 
 <main class="list_items container">
@@ -63,4 +65,5 @@
     unset($_SESSION['error_message']);
     unset($_SESSION['description_brand']);
     unset($_SESSION['modal_brand']);
+    unset($_SESSION['brand_id_edit']);
 ?>

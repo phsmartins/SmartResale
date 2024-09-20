@@ -117,7 +117,7 @@
                         <td><?= $brand->getProfit(); ?></td>
                         <td><?= $brand->getQuantityOfProductsSold(); ?></td>
                         <td>
-                            <a class="actions" title='Editar' href='/?<?= $brand->getId(); ?>'><i class='fa-solid fa-pen-to-square'></i></a>
+                            <a class="actions" title='Editar' href='/edit-brand?brand=<?= $brand->getId(); ?>'><i class='fa-solid fa-pen-to-square'></i></a>
                             <a class="actions" title='Deletar' href='/?<?= $brand->getId(); ?>'><i class='fa-solid fa-trash'></i></a>
                         </td>
                     </tr>
