@@ -6,16 +6,23 @@ const closeInsertionModel = document.querySelector("#closeInsertionModel");
 insertionModalButton.addEventListener("click", () => {
     insertionModal.style.display = "block";
     modalOverflow.style.display = "block";
+
+    window.scrollTo({top: 0,});
+    document.body.style.overflow = "hidden"
 });
 
 closeInsertionModel.addEventListener("click", () => {
     insertionModal.style.display = "none";
     modalOverflow.style.display = "none";
+
+    document.body.style.overflow = "auto";
 });
 
 modalOverflow.addEventListener("click", () => {
     insertionModal.style.display = "none";
     modalOverflow.style.display = "none";
+
+    document.body.style.overflow = "auto";
 });
 
 function errorModal() {

@@ -11,7 +11,10 @@ $builder->addDefinitions([
 
             return $pdo;
         } catch (PDOException $e) {
-            echo "<h2>Erro ao se conectar no banco de dados</h2>";
+            echo "
+                <h2>Erro ao se conectar no banco de dados</h2>
+                <p>{$e}</p>    
+            ";
             exit();
 
             // throw new RuntimeException("Erro ao se conectar no banco de dados: " . $e->getMessage());

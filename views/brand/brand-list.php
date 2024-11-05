@@ -138,22 +138,22 @@
 
                             <?php foreach (NUMBER_OF_LINES as $numberOfLines): ?>
                                 <option
-                                    onclick="
-                                        listItem(
-                                            <?= "'" . BRANDS_LIST_URL . "'" . ", 1," . $numberOfLines . ", '{$filter}', {$order}, {$currentOrder}"; ?>
-                                        )
-                                    "
+                                    value="<?= $numberOfLines; ?>"
+                                    data-brands-url="<?= BRANDS_LIST_URL; ?>"
+                                    data-filter="<?= $filter; ?>"
+                                    data-order="<?= $order; ?>"
+                                    data-current-order="<?= $currentOrder; ?>"
                                 >
                                     <?= $numberOfLines; ?>
                                 </option>
                             <?php endforeach; ?>
 
                             <option
-                                onclick="
-                                    listItem(
-                                        <?= "'" . BRANDS_LIST_URL . "'" . ", 1," . $brandCount . ", '{$filter}', {$order}, {$currentOrder}"; ?>
-                                    )
-                                "
+                                value="<?= $brandCount; ?>"
+                                data-brands-url="<?= BRANDS_LIST_URL; ?>"
+                                data-filter="<?= $filter; ?>"
+                                data-order="<?= $order; ?>"
+                                data-current-order="<?= $currentOrder; ?>"
                             >
                                 Todas
                             </option>
