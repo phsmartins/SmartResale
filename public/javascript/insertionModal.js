@@ -1,7 +1,8 @@
 const insertionModalButton = document.querySelector("#insertionModalButton");
 const insertionModal = document.querySelector("#insertionModal");
-const modalOverflow = document.querySelector("#modalOverflow");
 const closeInsertionModel = document.querySelector("#closeInsertionModel");
+
+const modalOverflow = document.querySelector("#modalOverflow");
 
 insertionModalButton.addEventListener("click", () => {
     insertionModal.style.display = "block";
