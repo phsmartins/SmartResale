@@ -8,7 +8,7 @@ Rode os seguintes comandos no diretório raiz do projeto
 
 
 2. ```php -S localhost:8888 -t ./public/```
-- Caso você não tenha a porta 8888 livre, não esqueça de alterar o arquivo paginator.js (public/javascrit)
+- Caso você não tenha a porta 8888 livre, não esqueça de alterar o arquivo paginator.js (/public/javascrit) e o arquivo url-list.php (/support/)
 
 --------------------
 <b>Acessar sistema com dados fictícios</b>
@@ -20,5 +20,13 @@ Senha: myPassword
 Ou crie uma conta para não ter nenhum dado inserido
 
 --------------------
-Telas desenvolvidas até agora:
-- Marcas
+<b>Telas desenvolvidas até agora:</b>
+- Marcas (em desenvolvimento)
+
+--------------------
+<b>Tecnologias usadas:</b>
+- PHP
+- SQLite
+- JavaScript
+- HTML
+- CSS
