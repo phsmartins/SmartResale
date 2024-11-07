@@ -21,7 +21,7 @@ readonly class AddBrandController implements RequestHandlerInterface
 
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        $_SESSION['modal_brand'] = 0;
+        $_SESSION['modal_brand_error'] = 0;
 
         $parsedBody = $request->getParsedBody();
 
@@ -30,7 +30,7 @@ readonly class AddBrandController implements RequestHandlerInterface
 
         if (empty($brandName)) {
             $_SESSION['description_brand'] = $description;
-            $_SESSION['modal_brand'] = 1;
+            $_SESSION['modal_brand_error'] = 1;
 
             $this->addErrorMessage("O campo 'Marca' não pode ser vazio");
 
@@ -44,8 +44,11 @@ readonly class AddBrandController implements RequestHandlerInterface
         );
 
         if (!($this->brandRepository->addBrand($brand))) {
-            return new Response('302', ['Location' => '/brands?error=1']);
+            $this->addErrorMessageAlert("Erro inesperado :(", "Tente novamente!");
+            return new Response('302', ['Location' => '/brands']);
         }
+
+        $this->addSuccessMessageAlert("Marca adiciona com sucesso", "Bom trabalho!");
 
         return new Response('302', ['Location' => '/brands']);
     }

@@ -24,5 +24,6 @@ return [
 
     'POST|/add-brand' => \Smart\Resale\Controller\Brand\AddBrandController::class,
 
-    'GET|/edit-brand' => \Smart\Resale\Controller\Brand\EditBrandController::class,
+    'GET|/edit-brand' => \Smart\Resale\Controller\Brand\EditBrandModalController::class,
+    'POST|/edit-brand' => \Smart\Resale\Controller\Brand\EditBrandController::class,
 ];
