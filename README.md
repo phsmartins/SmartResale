@@ -21,6 +21,7 @@ Ou crie uma conta para não ter nenhum dado inserido
 
 --------------------
 <b>Telas desenvolvidas até agora:</b>
+- Configurações
 - Marcas (em desenvolvimento)
 
 --------------------
