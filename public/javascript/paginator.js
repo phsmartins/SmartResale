@@ -9,7 +9,7 @@ const listItem = async (url, page, limit, filter, order, currentOrder) => {
 
     inputSearchBrand.addEventListener("click", () => {
         const select = document.getElementById("paginationControlNumberPageOptions");
-        const option = document.getElementById("listAllBrands");
+        const option = document.getElementById('listAllBrands');
 
         if (option) {
             select.value = option.value;
