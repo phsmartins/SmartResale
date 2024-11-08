@@ -149,6 +149,7 @@ require_once __DIR__ . "/../../support/url-list.php";
                             <?php endforeach; ?>
 
                             <option
+                                    id="listAllBrands"
                                     value="<?= $brandCount; ?>"
                                     data-brands-url="<?= BRANDS_LIST_URL; ?>"
                                     data-filter="<?= $filter; ?>"
