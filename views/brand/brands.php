@@ -7,14 +7,17 @@ $this->layout('layout');
 <main class="list_items container">
     <div class="list_items__title">
         <h1>Marcas</h1>
-        <button id="insertionModalButton"><i class="fa-solid fa-plus"></i> Adicionar marca</button>
+
+        <div class="actionsListItems">
+            <button id="insertionModalButton"><i class="fa-solid fa-plus"></i> Adicionar marca</button>
+
+            <div title="Pesquisar marca" class="search-box">
+                <button class="btn-search"><i class="fas fa-search"></i></button>
+                <input type="text" placeholder="Nome da marca" class="input-search" id="inputSearchBrand">
+            </div>
+        </div>
     </div>
     <hr>
-
-    <div class="searchBox">
-        <label for="inputSearchBrand">Buscar marca por nome:</label>
-        <input type="text" placeholder="Nome da marca" id="inputSearchBrand" >
-    </div>
 
     <div>
         <span class="list_items_js"></span>
