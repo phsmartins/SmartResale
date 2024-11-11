@@ -11,7 +11,10 @@ $this->layout('layout');
     </div>
     <hr>
 
-    <input type="text" placeholder="Buscar marca" id="inputSearchBrand" >
+    <div class="searchBox">
+        <label for="inputSearchBrand">Buscar marca por nome:</label>
+        <input type="text" placeholder="Nome da marca" id="inputSearchBrand" >
+    </div>
 
     <div>
         <span class="list_items_js"></span>

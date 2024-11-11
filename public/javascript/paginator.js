@@ -3,37 +3,30 @@ let inputSearchBrand;
 let paginationControl;
 let noResultsMessage;
 
-// Função para listar os itens
 const listItem = async (url, page, limit, filter, order, currentOrder) => {
     const response = await fetch(`${url}?page=${page}&limit=${limit}&filter=${filter}&order=${order}&current_order=${currentOrder}`);
     tbody.innerHTML = await response.text();
 
-    // Inicializa o input, controle de paginação e mensagem de "Nenhum item encontrado"
     initializeSearch();
     initializePagination();
     initializeNoResultsMessage();
 }
 
-// Inicializa o input de busca
 const initializeSearch = () => {
     inputSearchBrand = document.querySelector('#inputSearchBrand');
 
     if (!inputSearchBrand) return;
 
-    // Remove event listeners anteriores
     inputSearchBrand.removeEventListener("input", handleSearch);
     inputSearchBrand.removeEventListener("click", handleInputClick);
 
-    // Adiciona novos event listeners
     inputSearchBrand.addEventListener("input", handleSearch);
     inputSearchBrand.addEventListener("click", handleInputClick);
 }
 
-// Inicializa a mensagem de "Nenhum item encontrado"
 const initializeNoResultsMessage = () => {
     noResultsMessage = document.querySelector("#noResultsMessage");
 
-    // Se a mensagem não existir, cria o elemento
     if (!noResultsMessage) {
         noResultsMessage = document.createElement("div");
         noResultsMessage.id = "noResultsMessage";
@@ -46,7 +39,6 @@ const initializeNoResultsMessage = () => {
     }
 }
 
-// Função para lidar com a busca
 const handleSearch = () => {
     const inputValue = inputSearchBrand.value.toLowerCase();
     const rows = document.querySelectorAll('.lines tr');
@@ -62,11 +54,9 @@ const handleSearch = () => {
         }
     });
 
-    // Exibe a mensagem de "Nenhum item encontrado" se não houver linhas visíveis
     noResultsMessage.style.display = hasVisibleRows ? "none" : "block";
 }
 
-// Função para lidar com o clique na input de busca
 const handleInputClick = () => {
     const select = document.getElementById("paginationControlNumberPageOptions");
     const option = document.getElementById('listAllBrands');
@@ -77,7 +67,6 @@ const handleInputClick = () => {
     }
 }
 
-// Inicializa o controle de paginação
 const initializePagination = () => {
     paginationControl = document.getElementById("paginationControlNumberPageOptions");
 
@@ -87,7 +76,6 @@ const initializePagination = () => {
     paginationControl.addEventListener("change", handlePaginationChange);
 }
 
-// Função para lidar com a mudança de página
 const handlePaginationChange = function () {
     const selectedOption = this.options[this.selectedIndex];
     const brandsUrl = selectedOption.getAttribute("data-brands-url");
@@ -100,7 +88,6 @@ const handlePaginationChange = function () {
     listItem(brandsUrl, page, numberOfLines, filter, order, currentOrder);
 }
 
-// Inicializa a página
 const initializePage = () => {
     let url;
 
@@ -115,5 +102,4 @@ const initializePage = () => {
     }
 }
 
-// Chama a função de inicialização
 initializePage();

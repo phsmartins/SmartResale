@@ -15,7 +15,7 @@ require_once __DIR__ . "/../../support/url-list.php";
 
 <?php if (!empty($brandList)) : ?>
     <div class='table_container'>
-        <table class='table table-striped'>
+        <table id="itemsPaginator" class='table table-striped'>
             <thead class='column'>
             <tr>
                 <th
