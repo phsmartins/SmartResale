@@ -12,7 +12,7 @@ $this->layout('layout');
             <button id="insertionModalButton"><i class="fa-solid fa-plus"></i> Adicionar marca</button>
 
             <div title="Pesquisar marca" class="search-box">
-                <button class="btn-search"><i class="fas fa-search"></i></button>
+                <button id="btnSearch" class="btn-search"><i class="fas fa-search"></i></button>
                 <input type="text" placeholder="Nome da marca" class="input-search" id="inputSearchBrand">
             </div>
         </div>

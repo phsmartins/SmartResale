@@ -2,6 +2,7 @@ const tbody = document.querySelector(".list_items_js");
 let inputSearchBrand;
 let paginationControl;
 let noResultsMessage;
+let btnSearch;
 
 const listItem = async (url, page, limit, filter, order, currentOrder) => {
     const response = await fetch(`${url}?page=${page}&limit=${limit}&filter=${filter}&order=${order}&current_order=${currentOrder}`);
@@ -14,6 +15,7 @@ const listItem = async (url, page, limit, filter, order, currentOrder) => {
 
 const initializeSearch = () => {
     inputSearchBrand = document.querySelector('#inputSearchBrand');
+    btnSearch = document.querySelector('#btnSearch');
 
     if (!inputSearchBrand) return;
 
@@ -22,6 +24,16 @@ const initializeSearch = () => {
 
     inputSearchBrand.addEventListener("input", handleSearch);
     inputSearchBrand.addEventListener("click", handleInputClick);
+
+    btnSearch.addEventListener('click', () => {
+        inputSearchBrand.click();
+        inputSearchBrand.focus();
+    });
+
+    inputSearchBrand.addEventListener('blur', () => {
+        inputSearchBrand.value = '';
+        inputSearchBrand.click();
+    });
 }
 
 const initializeNoResultsMessage = () => {
