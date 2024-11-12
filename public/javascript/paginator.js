@@ -31,8 +31,10 @@ const initializeSearch = () => {
     });
 
     inputSearchBrand.addEventListener('blur', () => {
-        inputSearchBrand.value = '';
-        inputSearchBrand.click();
+        setTimeout(() => {
+            inputSearchBrand.value = '';
+            inputSearchBrand.click();
+        }, 1000);
     });
 }
 
