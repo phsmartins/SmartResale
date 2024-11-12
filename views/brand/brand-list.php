@@ -112,7 +112,7 @@ require_once __DIR__ . "/../../support/url-list.php";
             <?php foreach ($brandList as $brand): ?>
                 <tr>
                     <td><?= $brand->getId(); ?></td>
-                    <td><?= $brand->getBrandName(); ?></td>
+                    <td><a href="/brand?brand=<?= $brand?->getId() ?>"><?= $brand->getBrandName(); ?></a></td>
                     <td><?= $brand->getInvoicing(); ?></td>
                     <td><?= $brand->getProfit(); ?></td>
                     <td><?= $brand->getQuantityOfProductsSold(); ?></td>

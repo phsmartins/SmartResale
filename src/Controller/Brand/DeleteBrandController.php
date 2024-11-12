@@ -9,7 +9,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Smart\Resale\Repository\BrandRepository;
 use Smart\Resale\Traits\FlashMessageTrait;
 
-class DeleteBrandController implements RequestHandlerInterface
+readonly class DeleteBrandController implements RequestHandlerInterface
 {
     use FlashMessageTrait;
 
