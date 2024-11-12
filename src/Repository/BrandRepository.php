@@ -132,7 +132,13 @@ readonly class BrandRepository
             return null;
         }
 
-        return $this->hydrateBrand($statement->fetch(\PDO::FETCH_ASSOC));
+        $result = $statement->fetch(\PDO::FETCH_ASSOC);
+
+        if ($result === false) {
+            return null;
+        }
+
+        return $this->hydrateBrand($result);
     }
 
     private function hydrateBrand(array $brandData): Brand
