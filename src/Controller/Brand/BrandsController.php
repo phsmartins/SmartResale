@@ -26,6 +26,10 @@ readonly class BrandsController implements RequestHandlerInterface
             $brand = $this->brandRepository->findBrandById($_SESSION['brand_id_edit']);
         }
 
+        if (array_key_exists('brand_id_delete', $_SESSION)) {
+            $brand = $this->brandRepository->findBrandById($_SESSION['brand_id_delete']);
+        }
+
         return new Response(
             200,
             body: $this->engine->render(

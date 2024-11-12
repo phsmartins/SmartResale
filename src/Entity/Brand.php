@@ -12,10 +12,10 @@ class Brand
     private int $userId;
     private string $brandName;
     private string $description;
-
     private float $invoicing;
     private float $profit;
     private int $quantityOfProductsSold;
+    private int $numberRegisteredProducts;
 
     public function __construct(int $userId, string $brandName, string $description = null)
     {
@@ -92,5 +92,15 @@ class Brand
     public function setQuantityOfProductsSold(int $quantity): void
     {
         $this->quantityOfProductsSold = $quantity;
+    }
+
+    public function getNumberRegisteredProducts(): string
+    {
+        return number_format($this->numberRegisteredProducts, "0", ",", ".");
+    }
+
+    public function setNumberRegisteredProducts(int $quantity): void
+    {
+        $this->numberRegisteredProducts = $quantity;
     }
 }

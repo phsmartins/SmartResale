@@ -76,7 +76,7 @@ readonly class BrandRepository
 
     public function findBrandsByUserId(int $userId, int $page, int $limit, string $filter, int $order = 0): ?array
     {
-        $allowedFilters = ['name', 'invoicing', 'profit', 'quantity_products_sold'];
+        $allowedFilters = ['name', 'invoicing', 'profit', 'quantity_products_sold', 'number_registered_products'];
         $filter = in_array($filter, $allowedFilters) ? $filter : 'id';
 
         $order = ($order === 1) ? 'DESC' : '';
@@ -147,6 +147,7 @@ readonly class BrandRepository
         $brand->setInvoicing($brandData['invoicing']);
         $brand->setProfit($brandData['profit']);
         $brand->setQuantityOfProductsSold($brandData['quantity_products_sold']);
+        $brand->setNumberRegisteredProducts($brandData['number_registered_products']);
 
         return $brand;
     }

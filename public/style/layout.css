@@ -210,7 +210,7 @@ div.actionsListItems {
 }
 
 /* Modal para inserir e atualizar */
-div#insertionModal, div#editModal {
+div#insertionModal, div#editModal, div#deleteModal {
     display: none;
 
     position: absolute;
@@ -227,11 +227,11 @@ div#insertionModal, div#editModal {
     width: 100rem;
 }
 
-div#editModal {
+div#editModal, div#deleteModal {
     display: block;
 }
 
-div#modalOverflow, div#editModalOverflow {
+div#modalOverflow, div#editModalOverflow, div#deleteModalOverflow {
     display: none;
 
     position: absolute;
@@ -245,7 +245,7 @@ div#modalOverflow, div#editModalOverflow {
     background-color: rgba(0, 0, 0, 0.75);
 }
 
-div#editModalOverflow {
+div#editModalOverflow, div#deleteModalOverflow {
     display: block;
 }
 
@@ -328,6 +328,25 @@ p.errorMessageModal {
 .inputError {
     border: 2px solid var(--delete-background-color) !important;
     animation: vibrate 0.3s ease-in-out;
+}
+
+div.infoDeleteModel h3 {
+    font-size: 2rem;
+
+    margin-bottom: 2rem;
+}
+
+div.infoDeleteModel p {
+    font-size: 1.8rem;
+}
+
+.deleteAlert {
+    margin-top: 2rem;
+}
+
+#deleteModal .button_box_modal button {
+    background: var(--delete-background-color);
+    border: none;
 }
 
 @keyframes slideUp {

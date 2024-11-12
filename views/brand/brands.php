@@ -108,6 +108,47 @@ $this->layout('layout');
 
     <?php endif; ?>
 
+    <?php if (array_key_exists('brand_id_delete', $_SESSION)): ?>
+
+        <div id="deleteModal" class="animationModal">
+            <div class="modalTitle">
+                <h2><i class="fa-solid fa-trash"></i> Deletar marca <?= $brand?->getBrandName(); ?></h2>
+                <p id="closeDeleteModel" title="Fechar"><i class="fa-solid fa-xmark"></i></p>
+            </div>
+
+            <form class="modalForm" method="post" action="/delete-brand">
+                <input type="hidden" name="brand_id" value="<?= $brand?->getId(); ?>">
+
+                <div class="infoDeleteModel">
+                    <h3>Você realmente deseja deletar a marca <b><?= $brand?->getBrandName(); ?></b>?</h3>
+                    <p>Quantidade de itens vendidos: <?= $brand?->getQuantityOfProductsSold(); ?></p>
+                    <p>Produtos cadastrados: <?= $brand?->getNumberRegisteredProducts(); ?></p>
+                    <p>Faturamento: <?= $brand?->getInvoicing(); ?></p>
+                    <p>Lucro: <?= $brand?->getProfit(); ?></p>
+
+                    <div class="deleteAlert">
+                        <p><b>
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            Ao clicar em "Deletar", todos esses dados serão perdidos
+                        </b></p>
+                        <p><b>
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            Inclusive os produtos cadastrados da marca <?= $brand?->getBrandName(); ?>
+                        </b></p>
+                    </div>
+                </div>
+
+                <div class="button_box_modal">
+                    <button type="submit">Deletar</button>
+                </div>
+            </form>
+        </div>
+        <div id="deleteModalOverflow"></div>
+
+        <script src="/javascript/deleteModal.js"></script>
+
+    <?php endif; ?>
+
     <div id="modalOverflow"></div>
 </main>
 
@@ -125,4 +166,5 @@ unset($_SESSION['error_message']);
 unset($_SESSION['description_brand']);
 unset($_SESSION['modal_brand_error']);
 unset($_SESSION['brand_id_edit']);
+unset($_SESSION['brand_id_delete']);
 ?>

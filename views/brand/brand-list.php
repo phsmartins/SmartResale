@@ -118,7 +118,7 @@ require_once __DIR__ . "/../../support/url-list.php";
                     <td><?= $brand->getQuantityOfProductsSold(); ?></td>
                     <td>
                         <a class="actions" title='Editar' href='/edit-brand?brand=<?= $brand->getId(); ?>'><i class='fa-solid fa-pen-to-square'></i></a>
-                        <a class="actions" title='Deletar' href='/?<?= $brand->getId(); ?>'><i class='fa-solid fa-trash'></i></a>
+                        <a class="actions" title='Deletar' href='/delete-brand?brand=<?= $brand->getId(); ?>'><i class='fa-solid fa-trash'></i></a>
                     </td>
                 </tr>
             <?php endforeach; ?>
