@@ -463,3 +463,36 @@ div.table_container {
 #paginationControlNumberPage p {
     font-size: 1.4rem;
 }
+
+/* Visuaçizar item único */
+
+div.headerViewSingleItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 2rem;
+}
+
+div.headerViewSingleItem h1 {
+    font-size: 3.8rem;
+    color: var(--primary-dark-color);
+}
+
+div.headerViewSingleItem button {
+    font-size: 1.6rem;
+    color: var(--text-light-color);
+    text-decoration: none;
+
+    padding: 1rem 2rem;
+
+    background-color: var(--upgrade-background-color);
+    border-radius: .5rem;
+    border: 1px solid var(--upgrade-background-color);
+
+    transition: .4s;
+}
+
+div.headerViewSingleItem button:hover {
+    background-color: var(--upgrade-hover-background-color);
+}
