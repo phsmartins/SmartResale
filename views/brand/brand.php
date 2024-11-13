@@ -26,6 +26,7 @@ $this->layout('layout');
         <?php endif; ?>
 
         <form class="modalForm" method="post" action="/edit-brand">
+            <input type="hidden" name="editBrandInput" value="single_brand">
             <input type="hidden" name="brand_id" value="<?= $brand->getId(); ?>">
 
             <div class="input_box_modal">
