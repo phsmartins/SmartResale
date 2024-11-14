@@ -26,6 +26,11 @@ readonly class EditBrandController implements RequestHandlerInterface
         $brandId = filter_var($parsedBody['brand_id'], FILTER_SANITIZE_NUMBER_INT);
         $brandName = filter_var($parsedBody['name'], FILTER_SANITIZE_SPECIAL_CHARS);
         $brandDescription = filter_var($parsedBody['description'], FILTER_SANITIZE_SPECIAL_CHARS);
+        $editBrandInput = null;
+
+        if (array_key_exists('editBrandInput', $parsedBody)) {
+            $editBrandInput = filter_var($parsedBody['editBrandInput'], FILTER_SANITIZE_SPECIAL_CHARS);
+        }
 
         if (empty($brandName)) {
             $_SESSION['brand_id_edit'] = $brandId;
@@ -47,6 +52,10 @@ readonly class EditBrandController implements RequestHandlerInterface
         }
 
         $this->addSuccessMessageAlert("Marca editada com sucesso", "Bom trabalho!");
+
+        if ($editBrandInput === 'single_brand') {
+            return new Response(302, ['Location' => "/brand?brand={$brandId}"]);
+        }
 
         return new Response(302, ['Location' => '/brands']);
     }
